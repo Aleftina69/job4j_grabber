@@ -6,5 +6,3 @@ CREATE TABLE post (
                       created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
                       UNIQUE (name, link)
 );
-
-
