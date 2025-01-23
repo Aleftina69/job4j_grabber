@@ -1,4 +1,4 @@
-package ru.job4j.model;
+package ru.job4j.grabber;
 
 import java.util.Objects;
 
@@ -8,6 +8,10 @@ public class Post {
     private String link;
     private String description;
     private long time;
+
+    public Post() {
+
+    }
 
     public Post(long id, String title, String link, String description, long time) {
         this.id = id;
@@ -35,6 +39,26 @@ public class Post {
 
     public long getTime() {
         return time;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
     }
 
     @Override
