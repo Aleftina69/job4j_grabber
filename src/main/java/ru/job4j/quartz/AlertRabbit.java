@@ -13,7 +13,6 @@ public class AlertRabbit {
             Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
             scheduler.start();
 
-            // Создаем JobDetail с параметрами
             JobDetail job = newJob(Rabbit.class)
                     .usingJobData("param1", "Hello, Rabbit!")
                     .usingJobData("param2", 42)
