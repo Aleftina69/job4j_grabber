@@ -1,13 +1,13 @@
-package ru.job4j.grabber;
+package ru.job4j.grabber.model;
 
 import java.util.Objects;
 
 public class Post {
-    private long id;
+    private Long id;
     private String title;
     private String link;
     private String description;
-    private long time;
+    private Long time;
 
     public Post() {
 

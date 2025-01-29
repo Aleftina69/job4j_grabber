@@ -4,7 +4,6 @@ import org.apache.log4j.Logger;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import ru.job4j.grabber.stores.Store;
-
 import static org.quartz.JobBuilder.newJob;
 import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
 import static org.quartz.TriggerBuilder.newTrigger;
@@ -32,10 +31,12 @@ public class SchedulerManager {
             SimpleScheduleBuilder times = simpleSchedule()
                     .withIntervalInSeconds(period)
                     .repeatForever();
+
             Trigger trigger = newTrigger()
                     .startNow()
                     .withSchedule(times)
                     .build();
+
             scheduler.scheduleJob(job, trigger);
         } catch (SchedulerException se) {
             LOGGER.error("When init job", se);

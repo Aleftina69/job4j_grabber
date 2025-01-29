@@ -6,6 +6,7 @@ import org.quartz.JobExecutionException;
 import ru.job4j.grabber.stores.Store;
 
 public class SuperJobGrab implements Job {
+
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
         var store = (Store) context.getJobDetail().getJobDataMap().get("store");
