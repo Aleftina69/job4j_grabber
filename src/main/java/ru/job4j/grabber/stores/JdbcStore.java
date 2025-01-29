@@ -2,7 +2,7 @@ package ru.job4j.grabber.stores;
 
 import org.apache.log4j.Logger;
 import ru.job4j.Main;
-import ru.job4j.grabber.Post;
+import ru.job4j.grabber.model.Post;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -21,17 +21,14 @@ public class JdbcStore implements Store {
     @Override
     public void save(Post post) {
         try {
-            LOGGER.info("Saving post: title=" + post.getTitle() + ", description=" + post.getDescription() + ", link=" + post.getLink());
-
             PreparedStatement statement = connection.prepareStatement(
                     "INSERT INTO post(name, text, link, created) VALUES (?, ?, ?, ?)",
                     Statement.RETURN_GENERATED_KEYS
             );
-            statement.setString(1, post.getTitle() != null ? post.getTitle() : "");
-            statement.setString(2, post.getDescription() != null ? post.getDescription() : "");
-            statement.setString(3, post.getLink() != null ? post.getLink() : "");
+            statement.setString(1, post.getTitle());
+            statement.setString(2, post.getDescription());
+            statement.setString(3, post.getLink());
             statement.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
-
             statement.execute();
 
             ResultSet generatedKeys = statement.getGeneratedKeys();
