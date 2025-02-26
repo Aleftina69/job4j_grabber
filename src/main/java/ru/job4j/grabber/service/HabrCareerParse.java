@@ -16,9 +16,9 @@ public class HabrCareerParse implements Parse {
     private static final String PREFIX = "/vacancies?page=";
     private static final String SUFFIX = "&q=Java%20developer&type=all";
     private static final int PAGE_COUNT = 5;
-    private final DateTimeParser dateTimeParser;
+    private DateTimeParser dateTimeParser;
 
-    public HabrCareerParse(DateTimeParser dateTimeParser) {
+    public HabrCareerParse() {
         this.dateTimeParser = dateTimeParser;
     }
 
