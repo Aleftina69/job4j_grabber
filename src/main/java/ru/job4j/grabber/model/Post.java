@@ -37,10 +37,6 @@ public class Post {
         return description;
     }
 
-    public long getTime() {
-        return time;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -55,10 +51,6 @@ public class Post {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public void setTime(long time) {
-        this.time = time;
     }
 
     @Override
@@ -84,8 +76,7 @@ public class Post {
                 + "id=" + id
                 + ", title='" + title + '\''
                 + ", link='" + link + '\''
-                + ", description='" + description + '\''
-                + ", time=" + time
+                + ", description='" + description
                 + '}';
     }
 }

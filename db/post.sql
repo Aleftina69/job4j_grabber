@@ -1,3 +1,4 @@
+SET client_encoding TO 'utf8';
 CREATE TABLE post (
                       id SERIAL PRIMARY KEY,
                       name VARCHAR(255),

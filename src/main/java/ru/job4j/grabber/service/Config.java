@@ -1,6 +1,7 @@
 package ru.job4j.grabber.service;
 
 import org.apache.log4j.Logger;
+
 import java.util.Properties;
 
 public class Config {
